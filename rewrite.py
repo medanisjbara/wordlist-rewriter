@@ -27,7 +27,7 @@ def strip(input,output,exceptions):
     print('done')
 
 def help():
-    print("""USAGE: python rewrite [-i] <input> [OPTIONS]
+    print("""USAGE: rewrite [-i] <input> [OPTIONS]
 
  OPTIONS:
 
