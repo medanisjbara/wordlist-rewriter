@@ -6,6 +6,7 @@ this program is made to rewrite wordlists
 git clone https://github.com/medanisjbara/wordlist-rewriter
 sudo cp rewrite.py /usr/bin/wordlist-rewriter/rewrite
 ```
+
 ##Usage
 type `rewrite -h` for help
 
