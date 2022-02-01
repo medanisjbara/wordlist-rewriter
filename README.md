@@ -2,6 +2,9 @@
 This script is a command line utility made to rewrite wordlists based on certain conditions. For example you can only allow numbers from a certain wordlist. Or maybe not allow them.
 This script is usually intended for those who want to make wordlists with certain criterias from a wordlist that has lines which do not meet those criterias. it's intended for bruteforcing targeted wordlists. I don't know if you can use it for other things.
 
+## Dependencies
+only python 3.
+
 ## Installation
 
 ```bash
