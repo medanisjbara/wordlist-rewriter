@@ -5,7 +5,7 @@ this program is made to rewrite wordlists
 
 ```bash
 git clone https://github.com/medanisjbara/wordlist-rewriter
-sudo cp rewrite.py /usr/bin/wordlist-rewriter/rewrite
+sudo cp wordlist-rewriter/rewrite.py /usr/bin/wordlist-rewriter/rewrite
 ```
 
 ## Usage
