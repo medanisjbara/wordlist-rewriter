@@ -5,25 +5,36 @@ infile,outfile,exclude,exfile,minlen,maxlen,nonums= ['']*7
 l = []
 
 def strip(input,output,exceptions):
-    content, f, clear = [], open(output,'w'), True
+    if not exceptions:
+        print('\n\n No option specified, exiting\n\n')
+        exit()
+    if output=='-':
+        def write(lines):
+            for line in lines:
+                print(line,end='')
+    elif output:
+        f = open(output,'w')
+        write = f.writelines
+    else:
+        f = open(f'{input}-filtred','w')
+        write = f.writelines
+    content, clear = [], True
     for line in open(input,errors='ignore'):
-        con = True
+        exB = False
         for exception in exceptions:
             if exception(line):
+                exB = True
                 break
-        else:
-            con = False
-        if con:
-            continue
+        if exB: continue
         content.append(line)
-        clear = False
+        WBCF = False
         if len(content)>5000:
-            f.writelines(content)
+            write(content)
             content = []
-            clear = True
+            WBCF = True
             print('.',end='')
-    if not clear:
-        f.writelines(content)
+    if not WBCF:
+        write(content)
     print('done')
 
 def help():
@@ -44,7 +55,7 @@ def help():
   -max MAX      set maximum word length to MAX (number)
 
   -nn           numbers (?d)*\\n will not be allowed
-  -nnl LEN      numbers (?d)\{L}\\n will be allowed
+  -nnl LEN      numbers (?d){L}\\n will be allowed
                 ex: -nnl 8    all numeric 8 digit numbers won't pass
                 ex: -nnl 8 9  all numeric 8 & 9 digit numbers won't pass
 
@@ -56,7 +67,7 @@ def parse():
     i = 0
     while i<len(argv)-1:
         i+=1
-        if argv[i]=='-h' or '-i' not in argv:
+        if argv[i]=='-h':
             help()
             exit()
         if argv[i]=='-i':
@@ -123,7 +134,7 @@ def gen():
     if maxlen:
         exceptions.append(lambda line:(len(line.strip('\n')))>maxlen)
     if nonums:
-        exceptions.append(lambda line:line.isnumeric())
+        exceptions.append(lambda line:line.strip('\n').isnumeric())
     if exclude:
         print("exclude function haven't been implemented yet")
 
