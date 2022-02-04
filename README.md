@@ -21,23 +21,25 @@ git clone https://github.com/medanisjbara/wordlist-rewriter
 ```
 for the python version
 ```bash
-sudo cp wordlist-rewriter/rewrite.py /usr/bin/rewrite
-sudo chmod +x /usr/bin/rewrite
+sudo install wordlist-rewriter/rewrite.py /bin/rewrite
 ```
 for the C compiled binary
 ```bash
-sudo cp wordlist-rewriter/rewrite /usr/bin/
+sudo install wordlist-rewriter/rewrite /bin
 ```
 If you want to compile it yourself.
 ```bash
 make
-sudo cp wordlist-rewriter/rewrite /usr/bin/
+install wordlist-rewriter/rewrite /bin/
 ```
 
 ## Usage
 
 type `rewrite -h` for help
 
+## To-do
+* Add functionality to the `-e` flag
+* Emplement memory allocations in the C version for more efficient RAM usage.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Mainly because I would like to learn about why those changes should be made.
