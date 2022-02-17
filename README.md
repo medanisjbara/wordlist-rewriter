@@ -19,18 +19,24 @@ first clone
 ```bash
 git clone https://github.com/medanisjbara/wordlist-rewriter
 ```
+then make sure your `~/.local/bin` folder is in your `$PATH` environment variable, if it's not then you can simply have it by adding the following command to your `~/.bashrc` file (or `~/.zshrc` or `~/.profile` depending on your shell)
+```bash
+export PATH=$PATH:$HOME/.local/bin
+``` 
+then you're set to go.
+
 for the python version
 ```bash
-sudo install wordlist-rewriter/rewrite.py /bin/rewrite
+install wordlist-rewriter/rewrite.py ~/.local/bin/rewrite
 ```
 for the C compiled binary
 ```bash
-sudo install wordlist-rewriter/rewrite /bin
+install wordlist-rewriter/rewrite ~/.local/bin
 ```
 If you want to compile it yourself.
 ```bash
 make
-install wordlist-rewriter/rewrite /bin/
+install wordlist-rewriter/rewrite ~/.local/bin
 ```
 
 ## Usage
