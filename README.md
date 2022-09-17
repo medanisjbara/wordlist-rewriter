@@ -32,7 +32,7 @@ cd wordlist-rewriter
 
 Next (For install the python version)
 
-```baah
+```bash
 
 make install_py
 
@@ -40,7 +40,7 @@ make install_py
 
 Next (For install the C version)
 
-```baah
+```bash
 
 make install_c
 
