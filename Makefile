@@ -1,6 +1,8 @@
 PREFIX = ${HOME}/.local/
-all:
+rewrite:
 	gcc rewrite.c -o rewrite
+all rewrite:
+
 install_c: all
 	cp -R ./rewrite ${DESTDIR}${PREFIX}/bin
 	chmod 775 ${DESTDIR}${PREFIX}/bin/rewrite
