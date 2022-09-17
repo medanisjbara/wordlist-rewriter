@@ -15,28 +15,60 @@ It is mainly intended for those who want to make wordlists with certain criteria
 (note that this project is for fun and for sharpening my skills buy training. that's all)
 
 ## Installation
-first clone
-```bash
-git clone https://github.com/medanisjbara/wordlist-rewriter
-```
-then make sure your `~/.local/bin` folder is in your `$PATH` environment variable, if it's not then you can simply have it by adding the following command to your `~/.bashrc` file (or `~/.zshrc` or `~/.profile` depending on your shell)
-```bash
-export PATH=$PATH:$HOME/.local/bin
-``` 
-then you're set to go.
+First clone
 
-for the python version
 ```bash
-install wordlist-rewriter/rewrite.py ~/.local/bin/rewrite
+
+git clone https://github.com/medanisjbara/wordlist-rewriter
+
 ```
-for the C compiled binary
+Next cd 
+
 ```bash
-install wordlist-rewriter/rewrite ~/.local/bin
+
+cd wordlist-rewriter
+
 ```
-If you want to compile it yourself.
+
+Next (For install the python version)
+```baah
+
+make install_py
+
+```
+
+Next (For install the C version)
+```baah
+
+make install_c
+
+```
+Note by default it will installed to ~/.local/bin so make sure your ~/.local/bin folder is in your $PATH environment variable.
+
+Run this command to put your ~/.local/bin folder is in your $PATH environment variable temporary.
+
 ```bash
-make
-install wordlist-rewriter/rewrite ~/.local/bin
+
+export PATH=$PATH:$HOME/.local/bin
+
+```
+
+Put this line of code in `~/.bashrc` file or `~/.zshrc` or `~/.profile`,etc (depending on your shell) to put your ~/.local/bin folder is in your $PATH environment variable permanent.
+
+Install it to /usr/ (For install the C version)
+
+```bash
+
+PREFIX=/usr/ make install_c
+
+```
+
+Install it to /usr/ (For install the Python version)
+
+```bash
+
+PREFIX=/usr/ make install_py
+
 ```
 
 ## Usage
